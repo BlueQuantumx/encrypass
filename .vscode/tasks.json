@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "flutter",
+			"command": "flutter",
+			"args": [
+				"build",
+				"web",
+				"--release",
+				"--dart-define",
+				"FLUTTER_WEB_CANVASKIT_URL=https://unpkg.zhimg.com/canvaskit-wasm@0.30.0/bin/",
+				"--base-href",
+				"/encrypass/"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "flutter: flutter build web"
+		}
+	]
+}

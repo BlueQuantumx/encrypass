@@ -48,33 +48,48 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: _controller,
-              obscureText: true,
-              keyboardType: TextInputType.visiblePassword,
-              onSubmitted: (String input) {
-                var encoded = sha256
-                        .convert(utf8.encode(input))
-                        .toString()
-                        .substring(0, 12)
-                        .replaceFirstMapped(RegExp(r"[a-z]"),
-                            (match) => match.group(0)!.toUpperCase()) +
-                    '@';
-                Clipboard.setData(ClipboardData(text: encoded));
-                setState(() {
-                  result = encoded;
-                });
-              },
+        child: SizedBox(
+          width: 300,
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextField(
+                    controller: _controller,
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                    ),
+                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
+                    onSubmitted: (String input) {
+                      var encoded = sha256
+                              .convert(utf8.encode(input))
+                              .toString()
+                              .substring(0, 12)
+                              .replaceFirstMapped(RegExp(r"[a-z]"),
+                                  (match) => match.group(0)!.toUpperCase()) +
+                          '@';
+                      Clipboard.setData(ClipboardData(text: encoded));
+                      setState(() {
+                        result = encoded;
+                      });
+                    },
+                  ),
+                  Divider(),
+                  Text(result),
+                  Divider(),
+                  TextButton(
+                    onPressed: () =>
+                        Clipboard.setData(ClipboardData(text: result)),
+                    child: Text("Copy"),
+                  ),
+                ],
+              ),
             ),
-            Text(result),
-            TextButton(
-              onPressed: () => Clipboard.setData(ClipboardData(text: result)),
-              child: Text("Copy"),
-            ),
-          ],
+          ),
         ),
       ),
     );

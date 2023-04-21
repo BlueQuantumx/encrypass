@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Encrypass',
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        useMaterial3: true,
       ),
       home: MyHomePage(title: 'Encrypass'),
     );

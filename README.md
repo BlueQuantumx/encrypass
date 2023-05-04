@@ -1,16 +1,7 @@
 # encrypass
 
-A new Flutter project.
+A multi-platform encryptor for you passwords.
 
-## Getting Started
+Use sha-256 to convert your original humanized password to random string, for the reason that preventing database leak.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For the situation that you may have no accessibility to you password manager, use this tool to regenerate your password with your own logic(easily remembered).

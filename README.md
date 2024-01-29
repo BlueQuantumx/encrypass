@@ -1,7 +1,5 @@
-# encrypass
+# EncryPass: Your Multi-Platform Password Encryptor
 
-A multi-platform encryptor for you passwords.
+Encrypt your passwords seamlessly across various platforms. Utilizing the secure sha-256 algorithm, transform your user-friendly password into a randomized string, effectively safeguarding against potential database leaks.
 
-Use sha-256 to convert your original humanized password to random string, for the reason that preventing database leak.
-
-For the situation that you may have no accessibility to you password manager, use this tool to regenerate your password with your own logic(easily remembered).
+In instances where you find yourself without access to your password manager, employ this tool to regenerate your password using a logic of your own choice — something easy to remember.
